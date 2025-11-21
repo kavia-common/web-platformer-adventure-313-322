@@ -1,82 +1,57 @@
-# Lightweight React Template for KAVIA
+# Mario Clone Game (React)
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
+This is a single-page fullscreen Mario-style platformer game built in React.
 
-## Features
+## How to Play
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+- Open the app (default: [http://localhost:3000](http://localhost:3000) or the configured port)
+- The entire game is a fullscreen page with a centered canvas.
 
-## Getting Started
+### Controls
 
-In the project directory, you can run:
+- Move: `←`/`→` or `A`/`D`
+- Jump: Spacebar or `↑`
+- Pause/Resume: `P`
+- Restart: `R` or click HUD "Restart"
+- When game over/win: Press Enter or click "Restart" to play again
 
-### `npm start`
+### Objective
 
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Collect all the coins you can!
+- Stomp enemies (jump on them) for points.
+- Reach the flag at the far right to win.
 
-### `npm test`
+- Lives: You start with 3. Getting hit from an enemy's side costs a life; you respawn. No lives = Game Over.
 
-Launches the test runner in interactive watch mode.
+### Features
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Classic platformer running/jumping, coyote time for jumps, gravity & friction.
+- Collisions with ground, platforms, coins, enemies, and flag.
+- Enemy AI: Patrols left/right, can be stomped.
+- Score & HUD overlay: Displays score, coins collected, lives left, current level.
+- Responsive: Game scales to your window while maintaining aspect ratio.
+- Stylish light theme with accent colors, clean minimal UI.
 
 ## Customization
 
-### Colors
+The game code is in `src/components/Game.js`, with supporting logic in `src/game/engine.js` and hooks in `src/hooks/useGameLoop.js`.
+You can tweak the level, add new tiles/entities, or extend sprites easily.
 
-The main brand colors are defined as CSS variables in `src/App.css`:
+## Running the Game
 
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
+```sh
+npm install
+npm start
 ```
 
-### Components
+or use your preferred REACT_APP_PORT. This project does **not** require any external services.
 
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
+## Accessibility
 
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
+- Keyboard controls are always available.
+- HUD/Controls accessible and readable.
 
-## Learn More
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+MIT
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
